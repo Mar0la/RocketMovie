@@ -21,6 +21,25 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
+  overflow-y: auto;
+ 
+ &::-webkit-scrollbar {
+   width: 12px;
+ }
+
+ &::-webkit-scrollbar-track {
+   background: transparent;
+ }
+
+ &::-webkit-scrollbar-thumb {
+   background: ${({ theme }) => theme.COLORS.PINK};
+   border-radius: 8px;
+ }
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+  }
 
   .link {
     display: flex;

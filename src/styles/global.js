@@ -10,6 +10,7 @@ export default createGlobalStyle`
   body {
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
     color: ${({ theme }) => theme.COLORS.WHITE};
+    overflow-y: hidden;
 
     -webkit-font-smoothing: antialiased;
   }

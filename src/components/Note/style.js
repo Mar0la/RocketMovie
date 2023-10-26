@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.button`
+export const Container = styled.div`
   width: 100%;
   background-color: ${({ $isDetails, theme }) => !$isDetails ? `${theme.COLORS.BACKGROUND_PINK}`: 'transparent'};
 
@@ -8,11 +8,25 @@ export const Container = styled.button`
   border-radius: 10px;
 
   padding: ${({$isDetails}) => $isDetails ? '0' : '32px'};
+  padding-bottom: ${({$isDetails}) => $isDetails ? '32' : '12px'};
+  margin-bottom:${({$isDetails}) => $isDetails ? '24px' : '0'} ;
   text-align: left;
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    filter: ${({$isDetails}) => !$isDetails ? ' brightness(0.9)' : 'initial'};
+    cursor: ${({$isDetails}) => !$isDetails ? 'pointer' : 'initial'};
+  }
+  
   p {
-    color: ${({theme}) => theme.COLORS.WHITE}
+    color: ${({theme}) => theme.COLORS.WHITE};
+    word-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: ${({$isDetails}) => !$isDetails ? '3' : 'initial'};
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis
   }
 
   .header {

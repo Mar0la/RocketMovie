@@ -38,8 +38,8 @@ export const Container = styled.div`
     align-items: center;
     gap: 24px;
     flex-wrap: wrap;
-
-    padding: 16px;
+    flex: 1;
+    padding: 15px;
 
     border-radius: 8px;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND_1100};

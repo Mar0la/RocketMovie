@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import  {Link } from 'react-router-dom'
+import  { Link } from 'react-router-dom'
+
 
 export const Container = styled.header`
   grid-area: header;
@@ -15,6 +16,7 @@ export const Container = styled.header`
   align-items: center;
   gap: 64px;
   padding: 0 80px;
+
   > h2 {
     font-size: 24px;
     color: ${({theme}) => theme.COLORS.PINK};
@@ -26,12 +28,18 @@ export const Profile = styled(Link)`
   display: flex;
   align-items: center;
   white-space: nowrap;
+  &:hover {
+      filter: none;
+  }
 
-
-  > img {
+   img {
     width: 56px;
     height: 56px;
     border-radius: 50%;
+  }
+  
+  img:hover {
+    border: 2px solid ${({theme}) => theme.COLORS.PINK}
   }
 
   > div {
@@ -42,23 +50,21 @@ export const Profile = styled(Link)`
     text-align: right;
   }
 
-  > div span {
-    font-size: 14px;
-    color: ${({theme}) => theme.COLORS.GRAY_100}
-  }
-
   > div strong {
     font-size: 14px;
-    color: ${({theme}) => theme.COLORS.WHITE}
+    color: ${({theme}) => theme.COLORS.WHITE};
   }
 `
 
 export const Logout = styled.button`
   border: none;
   background: none;
-
-  > svg {
+  text-align: right;
+  > span {
+    font-size: 14px;
     color: ${({theme}) => theme.COLORS.GRAY_100};
-    font-size: 36px;
+  }
+  > span:hover {
+    color: ${({theme}) => theme.COLORS.PINK}
   }
 `
